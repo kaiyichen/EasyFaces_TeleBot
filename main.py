@@ -1,6 +1,3 @@
-import os
-PORT = int(os.environ.get('PORT', 5000))
-
 
 import facedetector
 import requests
