@@ -1,4 +1,7 @@
 import os
+PORT = int(os.environ.get('PORT', 5000))
+
+
 import facedetector
 import requests
 import urllib.request
@@ -6,6 +9,31 @@ import telebot
 
 from telebot.types import BotCommand, InlineKeyboardButton, InlineKeyboardMarkup
 
+from telegram.ext import Updater, InlineQueryHandler, CommandHandler
+import requests
+import re
+import os
+PORT = int(os.environ.get('PORT', 5000))
+TOKEN = "os.environ["TOKEN"]"
+API_ENDPOINT = 'https://dog.ceo/api/breeds/image/random'
+
+updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=TOKEN)
+updater.bot.setWebhook('https://yourherokuappname.herokuapp.com/' + '5063871953:AAF1dRZkltVS3y9dVKIfyDyMx4hCjGy8WZw')
+
+def main():    
+  updater = Updater(TOKEN, use_context=True)    
+  dp = updater.dispatcher  
+  
+  dp.add_handler(CommandHandler('bop', bop))   
+     
+  updater.start_webhook(listen="0.0.0.0",        
+                        port=int(PORT),                       
+                        url_path=TOKEN) 
+  updater.bot.setWebhook('https://https://easyfaces.herokuapp.com//' + TOKEN) 
+  updater.idle()
+  
 # TelegramBot
 API_KEY = os.getenv('API_KEY') 
 bot = telebot.TeleBot(API_KEY)
