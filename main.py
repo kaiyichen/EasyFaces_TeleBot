@@ -20,14 +20,12 @@ API_ENDPOINT = 'https://dog.ceo/api/breeds/image/random'
 updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN)
-updater.bot.setWebhook('https://yourherokuappname.herokuapp.com/' + '5063871953:AAF1dRZkltVS3y9dVKIfyDyMx4hCjGy8WZw')
+updater.bot.setWebhook('https://yourherokuappname.herokuapp.com/' + 'TOKEN')
 
 def main():    
   updater = Updater(TOKEN, use_context=True)    
   dp = updater.dispatcher  
-  
-  dp.add_handler(CommandHandler('bop', bop))   
-     
+      
   updater.start_webhook(listen="0.0.0.0",        
                         port=int(PORT),                       
                         url_path=TOKEN) 
@@ -296,4 +294,8 @@ def photo_chosen(chat_id,message):
   message_text = message.text
   return message_text
 
+if __name__ == '__main__':
+    main()
+
 bot.infinity_polling()
+
