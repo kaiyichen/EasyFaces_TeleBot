@@ -1,4 +1,4 @@
-
+import os
 import facedetector
 import requests
 import urllib.request
@@ -6,32 +6,6 @@ import telebot
 
 from telebot.types import BotCommand, InlineKeyboardButton, InlineKeyboardMarkup
 
-from telegram.ext import Updater, InlineQueryHandler, CommandHandler
-import requests
-
-import logging
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-import os
-PORT = int(os.environ.get('PORT', 5000))
-
-# Enable logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-
-logger = logging.getLogger(__name__)
-
-TOKEN = "os.environ["TOKEN"]"
-
-def main():    
-  updater = Updater(TOKEN, use_context=True)    
-  dp = updater.dispatcher  
-      
-  updater.start_webhook(listen="0.0.0.0",        
-                        port=int(PORT),                       
-                        url_path=TOKEN) 
-  updater.bot.setWebhook('https://https://easyfaces.herokuapp.com//' + TOKEN) 
-  updater.idle()
-  
 # TelegramBot
 API_KEY = os.getenv('API_KEY') 
 bot = telebot.TeleBot(API_KEY)
@@ -294,8 +268,4 @@ def photo_chosen(chat_id,message):
   message_text = message.text
   return message_text
 
-if __name__ == '__main__':
-    main()
-
-
-
+bot.infinity_polling()
