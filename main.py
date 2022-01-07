@@ -297,5 +297,5 @@ def photo_chosen(chat_id,message):
 if __name__ == '__main__':
     main()
 
-bot.infinity_polling()
+
 
